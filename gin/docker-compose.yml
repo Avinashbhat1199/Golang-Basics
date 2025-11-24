@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres # It is best practice to specify a version tag
+    
+    environment:
+      POSTGRES_USER: postgres:16       # Optional: defaults to 'postgres'
+      POSTGRES_PASSWORD: postgres # REQUIRED: Container will exit without this
+      POSTGRES_DB: postgres      # Optional: creates this DB on startup
+    volumes:
+      - ./data/db:/var/lib/postgresql/data # Fixed the path typo
+    ports:
+      - "5432:5432" # Allows you to connect from your host machine
+
+
+
+  
